@@ -9,7 +9,9 @@ SECTIONS
 {
     .text : {
         . = ALIGN(4);
+        _text_vectortable_start = .;
         KEEP(*(.vector_table))
+        _text_vectortable_end = .;
         *(.text .text.*)
         *(.rodata .rodata*)
     } > rom

@@ -2,7 +2,6 @@ deps_config := \
 	src/simulator/Kconfig \
 	src/linux/Kconfig \
 	src/pru/Kconfig \
-	src/stm32f0/Kconfig \
 	src/stm32/Kconfig \
 	src/lpc176x/Kconfig \
 	src/atsamd/Kconfig \
