@@ -136,7 +136,13 @@ DECL_COMMAND_FLAGS command_config_tmcuart 0 config_tmcuart oid=%c rx_pin=%u pull
 DECL_COMMAND_FLAGS command_spi_set_software_bus 0 spi_set_software_bus oid=%c miso_pin=%u mosi_pin=%u sclk_pin=%u mode=%u rate=%u
 _DECL_STATIC_STR Invalid spi config
 DECL_COMMAND_FLAGS command_neopixel_send 0 neopixel_send oid=%c data=%*s
-DECL_COMMAND_FLAGS command_config_neopixel 0 config_neopixel oid=%c pin=%u
+DECL_COMMAND_FLAGS command_config_neopixel 0 config_neopixel oid=%c pin=%u bit_max_ticks=%u reset_min_ticks=%u
+_DECL_CALLLIST ctr_run_taskfuncs adxl345_task
+DECL_COMMAND_FLAGS command_query_adxl345 0 query_adxl345 oid=%c clock=%u rest_ticks=%u
+_DECL_ENCODER adxl345_end oid=%c end1_time=%u end2_time=%u limit_count=%hu sequence=%hu
+_DECL_ENCODER adxl345_start oid=%c start1_time=%u start2_time=%u
+_DECL_ENCODER adxl345_data oid=%c sequence=%hu data=%*s
+DECL_COMMAND_FLAGS command_config_adxl345 0 config_adxl345 oid=%c spi_oid=%c
 _DECL_CALLLIST ctr_run_initfuncs watchdog_init
 _DECL_CALLLIST ctr_run_taskfuncs watchdog_reset
 _DECL_STATIC_STR Not a valid input pin
@@ -160,7 +166,6 @@ _DECL_CALLLIST ctr_run_shutdownfuncs timer_reset
 DECL_CONSTANT CLOCK_FREQ +0x044AA200
 _DECL_STATIC_STR Not a valid ADC pin
 DECL_CONSTANT ADC_MAX +0x00000FFF
-_DECL_STATIC_STR i2c_read not supported on stm32
 _DECL_STATIC_STR Failed to send i2c addr
 _DECL_STATIC_STR i2c timeout
 _DECL_STATIC_STR Unsupported i2c bus
